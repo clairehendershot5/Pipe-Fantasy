@@ -4,10 +4,6 @@
 (require 2htdp/image)
 (require 2htdp/universe)
 
-;; Task 7 : uncomment line 899
-;; Note: my next pipe feeds from the bottom of my incoming pipe list so my pipe lists looks
-;; opposite from the picture. 
-
 (define-struct pipe [top bot left right])
 ;; A Pipe is a (make-pipe Boolean Boolean Boolean Boolean)
 ;; Interpretation: a pipe with openings in the given directions. A  #true for 
@@ -885,18 +881,4 @@
                                 PIPE-TL PIPE-BR PIPE-BL PIPE-TBLR PIPE-LR PIPE-TR PIPE-TL PIPE-TB PIPE-LR PIPE-TR PIPE-TL PIPE-BR PIPE-BL PIPE-TBLR PIPE-LR
                                 PIPE-TR PIPE-TL PIPE-TB PIPE-LR PIPE-TR PIPE-TL PIPE-BR PIPE-BL PIPE-TBLR PIPE-LR PIPE-TR PIPE-TL))
 (define GAMESTATE-EX1 (gamestate-init 7 7 3 2 "RIGHT" INCOMING-PIPES-EX))
-;(pipe-fantasy GAMESTATE-EX1)
-
-(define GAMESTATE-EX2 (gamestate-init 7 7 6 4 "LEFT" INCOMING-PIPES-EX))
-;(pipe-fantasy GAMESTATE-EX2)
-
-(define GAMESTATE-EX3 (make-gamestate (make-grid 6 6 1 (list (make-pipe-cord PIPE-BL 3 5 "") (make-pipe-cord PIPE-TBLR 3 4 "") (make-pipe-cord PIPE-TB 3 3 "")
-                                                             (make-pipe-cord PIPE-TL 3 2 "") (make-pipe-cord PIPE-TR 2 2 "") (make-pipe-cord PIPE-TBLR 2 3 "")
-                                                             (make-pipe-cord PIPE-BR 2 4 "") (make-pipe-cord PIPE-TBLR 3 4 "") (make-pipe-cord PIPE-LR 4 4 "") (make-pipe-cord PIPE-TL 5 4 "")))
-                                      (list PIPE-BR PIPE-TB PIPE-LR PIPE-TBLR PIPE-TL)
-                                      100 25
-                                      (make-pipe-cord PIPE-SR 2 5 "RIGHT")
-                                      (make-gooflow (list (make-pipe-cord PIPE-SR 2 5 "RIGHT")) "RIGHT")
-                                      0
-                                      28))
-;(pipe-fantasy GAMESTATE-EX3)
+(pipe-fantasy GAMESTATE-EX1)
